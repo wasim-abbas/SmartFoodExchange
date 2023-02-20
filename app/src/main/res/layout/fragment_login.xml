@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_500"
+    android:orientation="vertical"
+    tools:context=".views.fragments.authFragments.LoginFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fill_your_data"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_24ssp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:textAllCaps="true"
+        />
+
+    <EditText
+        android:id="@+id/edMail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingVertical="@dimen/_8sdp"
+        android:hint="@string/email"
+        android:paddingStart="@dimen/_12sdp"
+        android:textSize="@dimen/_12ssp"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/green_500"
+        tools:ignore="RtlSymmetry" />
+    <EditText
+        android:id="@+id/edPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingVertical="@dimen/_8sdp"
+        android:hint="@string/password"
+        android:paddingStart="@dimen/_12sdp"
+        android:textSize="@dimen/_12ssp"
+        android:imeOptions="actionNext"
+        android:inputType="textPassword"
+        android:textColor="@color/green_500"
+        tools:ignore="RtlSymmetry" />
+
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btnForgotPass"
+        style="@style/StyleRippleCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_gravity="end"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/forgot_your_password"
+            android:textSize="@dimen/_12ssp"
+            android:fontFamily="@font/aestetico_medium"
+            />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/login_btn"
+        style="@style/StyleRippleCircle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginVertical="@dimen/_24sdp"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/auth_button"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="@string/login_now"
+            android:textAllCaps="true"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/aestetico_medium"
+            android:textColor="@color/green_500"
+            android:textSize="@dimen/_12ssp" />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+
+
+</LinearLayout>

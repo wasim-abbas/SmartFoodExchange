@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Theme.auth"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_500"
+    tools:context=".views.fragments.authFragments.SplashFragment">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_140sdp"
+        android:paddingHorizontal="@dimen/_60sdp"
+        android:layout_marginVertical="@dimen/_80sdp"
+        android:src="@drawable/logo" />
+
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/login_btn"
+        style="@style/StyleRippleCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/register_btn"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/auth_button"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="@font/aestetico_medium"
+            android:textColor="@color/green_500"
+            android:textSize="@dimen/_12ssp" />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/register_btn"
+        style="@style/StyleRippleCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:layout_marginBottom="@dimen/_80sdp"
+        >
+
+        <TextView
+            android:layout_width="@dimen/_160sdp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/auth_button"
+            android:paddingVertical="@dimen/_6sdp"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:gravity="center"
+            android:fontFamily="@font/aestetico_medium"
+            android:textColor="@color/green_500"
+            android:textSize="@dimen/_12ssp"
+            android:textStyle="bold"
+            />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+
+
+</RelativeLayout>

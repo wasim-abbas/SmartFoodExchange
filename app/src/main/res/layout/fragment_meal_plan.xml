@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_500"
+    tools:context=".views.fragments.mainFragments.MealPlanFragment">
+
+    <TextView
+        android:id="@+id/txtAppNAme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textSize="@dimen/_16ssp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtAppNAme"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:fontFamily="@font/aestetico_medium"
+        android:text="@string/breakfast"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/txtBreakFast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtAppNAme"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:text="@string/_00_00"
+        android:textSize="@dimen/_12ssp" />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btnBreakFast"
+        style="@style/StyleRippleCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtBreakFast"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_alignParentEnd="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/set"
+            android:textSize="@dimen/_10ssp"
+            android:background="@drawable/btn_stroke_white"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_2sdp"
+            />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnBreakFast"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:fontFamily="@font/aestetico_medium"
+        android:text="@string/lunch"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/txtLunch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnBreakFast"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:text="@string/_00_00"
+        android:textSize="@dimen/_12ssp" />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btnLunch"
+        style="@style/StyleRippleCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtLunch"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_alignParentEnd="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/set"
+            android:textSize="@dimen/_10ssp"
+            android:background="@drawable/btn_stroke_white"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_2sdp"
+            />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLunch"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:fontFamily="@font/aestetico_medium"
+        android:text="@string/dinner"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/txtDinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLunch"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:text="@string/_00_00"
+        android:textSize="@dimen/_12ssp" />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btnDinner"
+        style="@style/StyleRippleCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtDinner"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_alignParentEnd="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/set"
+            android:textSize="@dimen/_10ssp"
+            android:background="@drawable/btn_stroke_white"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_2sdp"
+            />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDinner"
+        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:fontFamily="@font/aestetico_medium"
+        android:text="@string/snack"
+        android:textSize="@dimen/_12ssp" />
+
+    <TextView
+        android:id="@+id/txtSnakc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnDinner"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:text="@string/_00_00"
+        android:textSize="@dimen/_12ssp" />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btnSnack"
+        style="@style/StyleRippleCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtSnakc"
+        android:layout_marginTop="@dimen/_4sdp"
+        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_alignParentEnd="true"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/set"
+            android:textSize="@dimen/_10ssp"
+            android:background="@drawable/btn_stroke_white"
+            android:paddingHorizontal="@dimen/_4sdp"
+            android:paddingVertical="@dimen/_2sdp"
+            />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+</RelativeLayout>

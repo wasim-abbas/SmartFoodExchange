@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <TextView
+        android:id="@+id/foodNAme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:fontFamily="@font/aestetico_medium"
+        android:text="@string/rice"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        android:layout_toLeftOf="@id/btnAdd"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        />
+
+    <com.balysv.materialripple.MaterialRippleLayout
+        android:id="@+id/btnAdd"
+        style="@style/StyleRippleCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"
+        android:paddingVertical="@dimen/_2sdp"
+        android:paddingHorizontal="@dimen/_4sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_4sdp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/add"
+            android:textSize="@dimen/_10ssp"
+            android:textColor="@color/black"
+
+            />
+
+    </com.balysv.materialripple.MaterialRippleLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@id/foodNAme"
+        android:layout_marginVertical="@dimen/_4sdp"
+        android:elevation="@dimen/_2sdp"
+        android:background="@color/green_light" />
+
+</RelativeLayout>

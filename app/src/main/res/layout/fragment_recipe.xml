@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_500"
+    android:orientation="vertical"
+    tools:context=".views.fragments.mainFragments.RecipeFragment">
+
+    <SearchView
+        android:id="@+id/SearcView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginVertical="@dimen/_12sdp"
+        android:background="@drawable/edit_text_bg"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@color/transparent"
+        android:queryHint="@string/recipe" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RvFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/rl"
+        android:layout_below="@id/SearcView"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_14sdp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="50"
+        tools:listitem="@layout/view_recipe" />
+
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/_16sdp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/EdRecipeName"
+            android:layout_width="@dimen/_180sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:background="@drawable/edit_text_bg"
+            android:hint="@string/please_add_recipe_name"
+            android:paddingStart="@dimen/_4sdp"
+            android:textSize="@dimen/_10ssp" />
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/btnNext"
+            style="@style/StyleRippleCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/_24sdp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_stroke_white"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/_4sdp"
+                android:paddingVertical="@dimen/_2sdp"
+                android:text="@string/next"
+                android:textSize="@dimen/_10ssp" />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

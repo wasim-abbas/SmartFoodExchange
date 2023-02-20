@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/green_500"
+    tools:context=".views.fragments.mainFragments.NutritionInfoFragment">
+
+    <SearchView
+        android:id="@+id/SearcView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edit_text_bg"
+        android:queryHint="@string/searc_food_here"
+        android:iconifiedByDefault="false"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginVertical="@dimen/_12sdp"
+        android:queryBackground="@color/transparent"
+
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RvFood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/SearcView"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/view_food_search"
+        tools:itemCount="50"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navgraph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.authFragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_registerUserDataFragment"
+            app:destination="@id/registerUserDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.authFragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/registerUserDataFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.authFragments.RegisterUserDataFragment"
+        android:label="fragment_register_user_data"
+        tools:layout="@layout/fragment_register_user_data" >
+        <action
+            android:id="@+id/action_registerUserDataFragment_to_registerUserInfoFragment"
+            app:destination="@id/registerUserInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerUserInfoFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.authFragments.RegisterUserInfoFragment"
+        android:label="fragment_register_user_info"
+        tools:layout="@layout/fragment_register_user_info" >
+        <action
+            android:id="@+id/action_registerUserInfoFragment_to_splashFragment"
+            app:destination="@id/splashFragment" />
+    </fragment>
+</navigation>

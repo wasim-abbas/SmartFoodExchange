@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_500"
+    android:orientation="vertical"
+    tools:context=".views.fragments.authFragments.RegisterUserDataFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/user_data"
+        android:layout_gravity="center"
+        android:textSize="@dimen/_24ssp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:textAllCaps="true"
+        />
+
+    <EditText
+        android:id="@+id/edName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingVertical="@dimen/_8sdp"
+        android:hint="@string/name"
+        android:paddingStart="@dimen/_12sdp"
+        android:textSize="@dimen/_12ssp"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:textColor="@color/green_500"
+        tools:ignore="RtlSymmetry" />
+    <EditText
+        android:id="@+id/edEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingVertical="@dimen/_8sdp"
+        android:hint="@string/email"
+        android:paddingStart="@dimen/_12sdp"
+        android:textSize="@dimen/_12ssp"
+        android:imeOptions="actionNext"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/green_500"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/edPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingVertical="@dimen/_8sdp"
+        android:hint="@string/password"
+        android:paddingStart="@dimen/_12sdp"
+        android:textSize="@dimen/_12ssp"
+        android:imeOptions="actionNext"
+        android:inputType="textPassword"
+        android:textColor="@color/green_500"
+        tools:ignore="RtlSymmetry"
+        />
+
+    <EditText
+        android:id="@+id/edConfirmPass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:background="@drawable/edit_text_bg"
+        android:paddingVertical="@dimen/_8sdp"
+        android:hint="@string/confirm_password"
+        android:paddingStart="@dimen/_12sdp"
+        android:textSize="@dimen/_12ssp"
+        android:imeOptions="actionNext"
+        android:inputType="textPassword"
+        android:textColor="@color/green_500"
+        tools:ignore="RtlSymmetry"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginHorizontal="@dimen/_24sdp"
+        >
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/btnNext"
+            style="@style/StyleRippleCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/next_icon"
+                />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+        <com.balysv.materialripple.MaterialRippleLayout
+            android:id="@+id/btnBack"
+            style="@style/StyleRippleCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            >
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/next_icon"
+                android:rotation="180"
+                />
+
+        </com.balysv.materialripple.MaterialRippleLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.mainFragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_nutritionInfoFragment"
+            app:destination="@id/nutritionInfoFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mealPlanFragment"
+            app:destination="@id/mealPlanFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nutritionInfoFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.mainFragments.NutritionInfoFragment"
+        android:label="fragment_nutrition_info"
+        tools:layout="@layout/fragment_nutrition_info" >
+        <action
+            android:id="@+id/action_nutritionInfoFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.mainFragments.FoodDetailFragment"
+        android:label="fragment_fodd_deatail"
+        tools:layout="@layout/fragment_fodd_deatail" />
+    <fragment
+        android:id="@+id/mealPlanFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.mainFragments.MealPlanFragment"
+        android:label="fragment_meal_plan"
+        tools:layout="@layout/fragment_meal_plan" />
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.mainFragments.RecipeFragment"
+        android:label="fragment_recipe"
+        tools:layout="@layout/fragment_recipe" >
+        <action
+            android:id="@+id/action_recipeFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.wasim.smartfoodexchange.views.fragments.mainFragments.RecipeDetailFragment"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail" />
+</navigation>
