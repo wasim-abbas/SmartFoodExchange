@@ -74,7 +74,7 @@ class NutritionInfoFragment : BaseFragments<BaseViewModel>() {
         foodList = mutableListOf<FoodExchange>()
         csvParser.forEach {
             it?.let {
-                val cities = FoodExchange(
+                val food = FoodExchange(
                     category = it.get(0),
                     food_name = it.get(1),
                     calories = it.get(2),
@@ -84,7 +84,7 @@ class NutritionInfoFragment : BaseFragments<BaseViewModel>() {
                     Food_Exchange = it.get(6),
 
                     )
-                (foodList as MutableList<FoodExchange>).add(cities)
+                (foodList as MutableList<FoodExchange>).add(food)
             }
         }
         foodAapter.updateData(foodList as ArrayList<FoodExchange>)

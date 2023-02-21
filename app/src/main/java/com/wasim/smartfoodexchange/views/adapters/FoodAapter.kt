@@ -21,7 +21,6 @@ class FoodAapter(var context: Context, var onClick: (String,String,String,String
     override fun setData(holder: FoodViewHolder, model: FoodExchange, position: Int) {
 
         val view = holder.itemView
-
         val binding = ViewFoodSearchBinding.bind(view)
         binding.foodNAme.text = model.food_name
 

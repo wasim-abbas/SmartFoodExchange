@@ -67,16 +67,17 @@ class HomeFragment : BaseFragments<BaseViewModel>() {
         }
 
         binding.floatActionRecipe.singleClick {
-           currentActivity().replaceMainFragment(R.id.action_homeFragment_to_recipeFragment)
+            currentActivity().replaceMainFragment(R.id.action_homeFragment_to_recipeFragment)
+            clicked = false
         }
         binding.floatActionMealPlan.singleClick {
             currentActivity().replaceMainFragment(R.id.action_homeFragment_to_mealPlanFragment)
+            clicked = false
         }
 
         binding.floatActionNutritionInfo.singleClick {
-
             currentActivity().replaceMainFragment(R.id.action_homeFragment_to_nutritionInfoFragment)
-
+            clicked = false
         }
     }
 

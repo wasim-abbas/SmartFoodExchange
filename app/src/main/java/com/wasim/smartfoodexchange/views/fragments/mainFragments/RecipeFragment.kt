@@ -9,9 +9,7 @@ import com.wasim.smartfoodexchange.R
 import com.wasim.smartfoodexchange.base.BaseFragments
 import com.wasim.smartfoodexchange.databinding.FragmentRecipeBinding
 import com.wasim.smartfoodexchange.models.FoodExchange
-import com.wasim.smartfoodexchange.utils.getString
-import com.wasim.smartfoodexchange.utils.isEmpty
-import com.wasim.smartfoodexchange.utils.singleClick
+import com.wasim.smartfoodexchange.utils.*
 import com.wasim.smartfoodexchange.viewModels.BaseViewModel
 import com.wasim.smartfoodexchange.views.adapters.RecipeAdapter
 import io.paperdb.Paper
@@ -30,12 +28,14 @@ class RecipeFragment : BaseFragments<BaseViewModel>() {
     private lateinit var binding: FragmentRecipeBinding
     val bundle = Bundle()
 
-    override fun observeLiveData() {
-    }
-
     private lateinit var recipeAapter: RecipeAdapter
     private lateinit var foodList: List<FoodExchange>
     private var recipeList: ArrayList<String> = arrayListOf()
+    private var mCaloreie: Int = 0
+    private var mProtein: Float = 0.0f
+    private var mFats: Float = 0.0f
+    private var mCarboHydrate: Float = 0.0f
+    private var mFoodExchange: Float = 0.0f
 
 
     override fun onCreateView(
@@ -46,24 +46,10 @@ class RecipeFragment : BaseFragments<BaseViewModel>() {
         return binding.root
     }
 
+    override fun observeLiveData() {}
 
     override fun init() {
 
-        recipeAapter =
-            RecipeAdapter(currentActivity()) { cat, addReccipe, calorie, protein, fat, carbogydarate, foodExchnage ->
-                recipeList?.add(addReccipe)
-
-                bundle.putString("category", cat)
-                bundle.putString("foodName", addReccipe)
-                bundle.putString("calorie", calorie)
-                bundle.putString("protein", protein)
-                bundle.putString("fats", fat)
-                bundle.putString("carbohydrate", carbogydarate)
-                bundle.putString("foodExchange", foodExchnage)
-            }
-        binding.RvFood.let {
-            it.adapter = recipeAapter
-        }
 
         binding.btnNext.singleClick {
             if (binding.EdRecipeName.isEmpty()) {
@@ -72,24 +58,21 @@ class RecipeFragment : BaseFragments<BaseViewModel>() {
 
                 bundle.putString("name", binding.EdRecipeName.getString())
                 bundle.putSerializable("key", recipeList as Serializable)
+
+                bundle.putString(CALORIE, mCaloreie.toString())
+                bundle.putString(PROTEIN, mProtein.toString())
+                bundle.putString(FATS, mFats.toString())
+                bundle.putString(CARBOHYDRATE, mCarboHydrate.toString())
+                bundle.putString(FOODEXCHANGE, mFoodExchange.toString())
                 currentActivity().replaceMainFragment(
                     R.id.action_recipeFragment_to_recipeDetailFragment,
                     bundle
                 )
             }
-
-
-            //                val bundle = Bundle()
-//                bundle.putString("category", cat)
-//                bundle.putString("foodName", addReccipe)
-//                bundle.putString("calorie", calorie)
-//                bundle.putString("protein", protein)
-//                bundle.putString("fats", fat)
-//                bundle.putString("carbohydrate", carbogydarate)
-//                bundle.putString("foodExchange", foodExchnage)
-
+            binding.EdRecipeName.text =null
 
         }
+
         val bufferReader =
             BufferedReader(currentActivity().assets.open("food_exchange.csv").reader())
         val csvParser = CSVParser.parse(
@@ -97,23 +80,50 @@ class RecipeFragment : BaseFragments<BaseViewModel>() {
             CSVFormat.DEFAULT
         )
 
-        foodList = mutableListOf<FoodExchange>()
-        csvParser.forEach {
-            it?.let {
-                val cities = FoodExchange(
-                    category = it.get(0),
-                    food_name = it.get(1),
-                    calories = it.get(2),
-                    protein = it.get(3),
-                    fat = it.get(4),
-                    carbohydrate = it.get(5),
-                    Food_Exchange = it.get(6),
-
-                    )
-                (foodList as MutableList<FoodExchange>).add(cities)
-            }
+        foodList = csvParser.map {
+            FoodExchange(
+                category = it.get(0),
+                food_name = it.get(1),
+                calories = it.get(2),
+                protein = it.get(3),
+                fat = it.get(4),
+                carbohydrate = it.get(5),
+                Food_Exchange = it.get(6)
+            )
         }
-        recipeAapter.updateData(foodList as ArrayList<FoodExchange>)
+//        csvParser.forEach {
+//            it?.let {
+//                val food = FoodExchange(
+//                    category = it.get(0),
+//                    food_name = it.get(1),
+//                    calories = it.get(2),
+//                    protein = it.get(3),
+//                    fat = it.get(4),
+//                    carbohydrate = it.get(5),
+//                    Food_Exchange = it.get(6),
+//
+//                    )
+              //  (foodList as MutableList<FoodExchange>).add(food)
+ //           }
+        recipeAapter = RecipeAdapter(currentActivity(), foodList) { foodName, calorie, protein, fat, carbohydrate, foodExchange ->
+            val newFood = FoodExchange(category = "", food_name = foodName, calories = calorie, protein = protein, fat = fat, carbohydrate = carbohydrate, Food_Exchange = foodExchange)
+            (foodList as MutableList<FoodExchange>).add(newFood)
+
+            recipeList.add(foodName)
+            mCaloreie += calorie.toInt()
+            mProtein += protein.toFloat()
+            mFats += fat.toFloat()
+            mCarboHydrate += carbohydrate.toFloat()
+            mFoodExchange += foodExchange.toFloat()
+
+            updateRecipeList(foodList)
+        }
+
+
+
+        binding.RvFood.let {
+            it.adapter = recipeAapter
+        }
 
         binding.SearcView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -121,7 +131,8 @@ class RecipeFragment : BaseFragments<BaseViewModel>() {
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                filterList(newText)
+               // filterList(newText)
+                recipeAapter.filterList(newText)
                 return true
             }
 
@@ -129,20 +140,24 @@ class RecipeFragment : BaseFragments<BaseViewModel>() {
 
     }
 
-    private fun filterList(query: String?) {
-        if (query != null) {
-            val myFilserListe = ArrayList<FoodExchange>()
-            for (i in foodList) {
-                if (i.food_name.lowercase(Locale.ROOT).contains(query)) {
-                    myFilserListe.add(i)
-                }
-            }
-            if (myFilserListe.isEmpty()) {
-                showToast("No Data Found")
-            } else {
-                recipeAapter.updateData(myFilserListe)
-            }
-        }
+//    private fun filterList(query: String?) {
+//        if (query != null) {
+//            val myFilserListe = ArrayList<FoodExchange>()
+//            for (i in foodList) {
+//                if (i.food_name.lowercase(Locale.ROOT).contains(query)) {
+//                    myFilserListe.add(i)
+//                }
+//            }
+//            if (myFilserListe.isEmpty()) {
+//                showToast("No Data Found")
+//            } else {
+//                updateRecipeList(myFilserListe)
+//            }
+//        }
+//
+//    }
 
+    private fun updateRecipeList(recipeData: List<FoodExchange>) {
+        recipeAapter.updateData(recipeData as ArrayList<FoodExchange>)
     }
 }

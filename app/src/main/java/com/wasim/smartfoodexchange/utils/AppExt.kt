@@ -42,20 +42,20 @@ const val USER_ID = "USER_ID"
 const val USER = "USER"
 const val CHANNEL_ID = "CHANNEL_ID"
 const val CHANNEL_NAME = "CHANNEL_NAME"
-const val GLUCOSEDATA = "GLUCOSEDATA"
-const val ALARM_NAME = "ALARM_NAME"
-const val SOMETHING_WENT_WRONG = "Something went wrong"
-const val NICKNAME = "NICKNAME"
-const val SEX = "SEX"
+const val CALORIE = "CALORIE"
+const val PROTEIN = "PROTEIN"
+const val CARBOHYDRATE = "CARBOHYDRATE"
+const val FATS = "FATS"
+const val FOODEXCHANGE = "FOODEXCHANGE"
 const val DATEOFBIRTH = "DATEOFBIRTH"
 const val HEIGHT = "HEIGHT"
 const val WEIGHT = "WEIGHT"
 const val FRAGMENT_NAME = "FRAGMENT_NAME"
 
-const val IMAGE_BASE_URL =
-    "https://app13.zatsole.co.uk/public/"  /// we have to change this url while calling api
-const val FCM_SERVER_KEY =
-    "AAAARAP-5Ow:APA91bGPKsAEBLMjHqOttJLhGATlu1U4a2wnfqD5ZOst57h6ChToCiiuJ-sxMZDl5lH_DDQtwmku0KCcVIyq8GQvzlEtx9cKyClpuRsiximpakV93HjmDCcH6Y2NyCP08qnX9L7zTAES"
+//const val IMAGE_BASE_URL =
+//    "https://app13.zatsole.co.uk/public/"  /// we have to change this url while calling api
+//const val FCM_SERVER_KEY =
+//    "AAAARAP-5Ow:APA91bGPKsAEBLMjHqOttJLhGATlu1U4a2wnfqD5ZOst57h6ChToCiiuJ-sxMZDl5lH_DDQtwmku0KCcVIyq8GQvzlEtx9cKyClpuRsiximpakV93HjmDCcH6Y2NyCP08qnX9L7zTAES"
 
 
 fun EditText.getString() = this.text.toString()

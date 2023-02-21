@@ -48,6 +48,8 @@
             android:layout_marginHorizontal="@dimen/_16sdp"
             android:background="@drawable/edit_text_bg"
             android:hint="@string/please_add_recipe_name"
+            android:imeOptions="actionDone"
+            android:inputType="text"
             android:paddingStart="@dimen/_4sdp"
             android:textSize="@dimen/_10ssp" />
 
@@ -66,7 +68,7 @@
                 android:gravity="center"
                 android:paddingHorizontal="@dimen/_4sdp"
                 android:paddingVertical="@dimen/_2sdp"
-                android:text="@string/next"
+                android:text="@string/calculate"
                 android:textSize="@dimen/_10ssp" />
 
         </com.balysv.materialripple.MaterialRippleLayout>
