@@ -102,4 +102,7 @@ dependencies {
     // csv reader
     implementation 'org.apache.commons:commons-csv:1.5'
 
+    implementation "androidx.activity:activity-ktx:1.2.0-alpha03"
+
+
 }

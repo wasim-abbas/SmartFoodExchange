@@ -51,6 +51,10 @@ const val DATEOFBIRTH = "DATEOFBIRTH"
 const val HEIGHT = "HEIGHT"
 const val WEIGHT = "WEIGHT"
 const val FRAGMENT_NAME = "FRAGMENT_NAME"
+const val NAME = "NAME"
+const val EMAIL = "EMAIL"
+const val PASSWORD = "PASSWORD"
+const val CONFIRMPASSWORD = "CONFIRMPASSWORD"
 
 //const val IMAGE_BASE_URL =
 //    "https://app13.zatsole.co.uk/public/"  /// we have to change this url while calling api
