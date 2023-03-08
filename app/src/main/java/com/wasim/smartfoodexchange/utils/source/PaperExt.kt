@@ -1,5 +1,6 @@
 package com.wasim.smartfoodexchange.utils.source
 
+import com.wasim.smartfoodexchange.models.RegisterModel
 import io.paperdb.Paper
 
 const val ACCESS_TOEKN = "ACCESS_TOEKN"
@@ -46,9 +47,9 @@ fun deleteAccessToken() {
     Paper.book(ACCESS_TOEKN).delete("token")
 }
 
-//fun addUser(loginResponseModel: LoginResponseModel) {
-//    Paper.book(USER).write("loginUser", loginResponseModel)
-//}
+fun addUser(registerUserModel: RegisterModel) {
+    Paper.book(USER).write("User", registerUserModel)
+}
 
 
 fun deleteUser() {
@@ -59,12 +60,12 @@ fun deleteRegisterUser() {
     Paper.book(REGISTER_USER).delete("registerUser")
 }
 
-//fun getUser(): LoginResponseModel? {
-//    val keys =
-//        Paper.book(USER).allKeys
-//    if (keys.size == 0) return null
-//    return Paper.book(USER)?.read("loginUser")
-//}
+fun getUser(): RegisterModel? {
+    val keys =
+        Paper.book(USER).allKeys
+    if (keys.size == 0) return null
+    return Paper.book(USER)?.read("User")
+}
 
 
 fun setFCMToken(token: String) {
